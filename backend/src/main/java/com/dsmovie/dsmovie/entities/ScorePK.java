@@ -7,9 +7,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Embeddable
-public class ScorePK implements Serializable{
+public class ScorePK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	/*O relacionamento muitos-para-um significa que 
+	várias instâncias de ScorePK podem estar 
+	associadas a uma única instância de Movie e uma 
+	única instância de User.*/
+	
 	@ManyToOne
 	@JoinColumn(name = "movie_id")
 	private Movie movie;
